@@ -1,0 +1,3 @@
+To Run This Code ................
+
+Change the Path of readCustomerJsonFile,readProductJsonFile,readPurchaseJsonFile in manageCustomer,manageProduct,managePurchase,Controller and wherever neccessary
