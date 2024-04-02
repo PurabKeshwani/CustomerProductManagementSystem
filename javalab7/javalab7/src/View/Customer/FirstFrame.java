@@ -1,7 +1,8 @@
 package View.Customer;
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class FirstFrame extends JFrame {
     JButton manageCustomerBtn;
@@ -9,22 +10,37 @@ public class FirstFrame extends JFrame {
     JButton managePurchaseBtn;
     JPanel firstPanel;
 
-    public FirstFrame()
-    {
+    public FirstFrame() {
         super("Main DashBoard");
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         manageCustomerBtn = new JButton("Manage Customer");
         manageProductBtn = new JButton("Manage Product");
         managePurchaseBtn = new JButton("Manage Purchase");
 
+        Border cyanBorder = BorderFactory.createLineBorder(Color.CYAN, 50);
+        Border greenBorder = BorderFactory.createLineBorder(Color.GREEN, 50);
+        Border yellowBorder = BorderFactory.createLineBorder(Color.YELLOW, 50);
+
+        // Set different colored borders to buttons
+        manageCustomerBtn.setBorder(cyanBorder);
+        manageProductBtn.setBorder(greenBorder);
+        managePurchaseBtn.setBorder(yellowBorder);
+
+
         firstPanel = new JPanel();
-        firstPanel.setLayout(new GridLayout(3,1,20,20));
+        firstPanel.setLayout(new GridLayout(3, 1, 20, 20));
         firstPanel.add(manageCustomerBtn);
         firstPanel.add(manageProductBtn);
         firstPanel.add(managePurchaseBtn);
 
         add(firstPanel);
         pack();
-        setSize(500,600);
+        setSize(500, 600);
         setVisible(true);
     }
 
@@ -60,3 +76,13 @@ public class FirstFrame extends JFrame {
         return manageProductBtn;
     }
 }
+
+
+
+
+
+
+
+
+
+
